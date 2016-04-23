@@ -1,0 +1,59 @@
+<template name="home">
+  <div class="page home">
+
+    {{>nav title='Paaza' black=true}}
+
+    <div class="content-scrollable">
+      <div class="bg-image home">
+        <h1 class="title-home">
+          <img src="img/app/logo-local.svg" alt="Paaza"/>
+        </h1>
+        <span class="hours">
+        <span class="title-callout">Moi University</span>
+        <br/>
+        0722-4320644</span>
+        <span class="arrow"></span>
+      </div>
+
+
+      <div class="callout-news">
+        <span class="title-callout">TOP NEWS</span>
+        {{latestNews.text}}
+      </div>
+       <a href="{{pathFor 'recipes'}}" class="btn-primary">Explore School News</a>
+    
+
+      <h2 class="list-title">STUDENT REPORTS</h2>
+      <div class="list-subtitle">View student academic reports and general progress</div>
+      <div class="list-recipes">
+        {{#each featuredRecipes}}
+            {{#if multipleStudents}}
+       {{> studentItem recipe=this size='small'}}
+      {{else}}
+        {{> studentItem recipe=this size='large'}}
+      {{/if}}
+          
+        {{/each}}
+      </div>
+
+      <a href="{{pathFor 'students'}}" class="btn-primary">View reports</a>
+
+      <h2 class="list-title">Forums</h2>
+      <div class="list-subtitle">See what the school community is discussing</div>
+      <div class="list-activities">
+        {{#each activities}}
+          {{> forumItem}}
+        {{else}}
+          <div class="wrapper-message">
+            <div class="title-message">No one has started a discussion yet!</div>
+            <div class="subtitle-message">Start, or contribute to, a forum and it will show up here.</div>
+          </div>
+        {{/each}}
+      </div>
+      <a href="{{pathFor 'feed'}}" class="btn-primary">Explore forums</a>
+
+     
+    </div>
+
+  </div>
+</template>

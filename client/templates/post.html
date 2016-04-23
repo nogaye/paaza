@@ -1,0 +1,53 @@
+<template name="post">
+
+  <div class="page post feed">
+    {{#nav title='Post' black=true back=true}}
+
+      {{#if bookmarked}}
+        <a href="#" class="nav-item js-remove-bookmark bookmarked"><span class="icon-bookmark"></span></a>
+      {{else}}
+        <a href="#" class="nav-item js-add-bookmark"><span class="icon-bookmark-hollow"></span></a>
+      {{/if}}
+       <a href="#" class="nav-item js-share"><span class="icon-camera"></span></a>
+    {{/nav}}
+
+    <div class="image-recipe" style="background-image: url('{{recipeImage recipe=this size='full'}}')"></div>
+
+
+
+    <div class="attribution-recipe js-uncollapse">
+      <h1 class="title-recipe">{{title}}</h1>
+      <div class="metadata-wrapper">
+        <p class="description-recipe">{{description}}</p>
+        <!--<span class="source">{{image}}</span> 
+        <span class="time">{{cookTime}}</span>-->
+      </div>
+
+    </div>
+
+
+    <div class="content-scrollable static-nav feed-scrollable">
+      <a class="btn-tertiary js-share"><span class="icon-camera"></span> Share your ideas</a>
+    
+
+      {{#if isAdmin}}
+       
+        <form>
+
+          <!--<label>Edit the front page news:</label>-->
+          <textarea name="text" rows="5" placeholder="Let your school know your concerns and ways that it can improve  (related to the topic you have selected) ...">{{latestNews.text}}</textarea>
+          <button type="submit" class="btn-primary">Post</button>
+        </form>
+      {{else}}
+        <h1 class="title-admin">Forbidden</h1>
+        
+        {{#unless currentUser}}
+          <a class="login">Log in with Twitter</a>
+        {{/unless}}
+      {{/if}}
+ 
+
+
+    </div>
+  </div>
+</template>

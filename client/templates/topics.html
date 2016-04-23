@@ -1,0 +1,18 @@
+<template name="topics">
+  <div class="page topics">
+    {{> nav title='Topics' black=true back=true}}
+
+    <div class="content-scrollable">
+      <div class="list-recipes">
+        {{#each this}}
+          {{#if highlighted}}
+            {{> topicItem topic=this size='large'}}
+          {{else}}
+            {{> topicItem topic=this size='small'}}
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+
+  </div>
+</template>

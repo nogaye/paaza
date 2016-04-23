@@ -1,0 +1,15 @@
+<template name="topicItem">
+  <a class="item-recipe {{highlightedClass}}" href="{{path}}">
+    {{#with topic}}
+      <span class="attribution">
+        <span class="title-recipe">{{title}}</span>
+        <span class="metadata-recipe">
+         <!-- <span class="author-recipe">{{description}}</span> -->
+          <span class="bookmarks-recipe"><span class="icon-bookmark"></span> {{bookmarkCount}}</span>
+        </span>
+      </span>
+    {{/with}}
+
+    <img src="{{recipeImage recipe=topic size=size}}" />
+  </a>
+</template>
