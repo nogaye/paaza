@@ -13,7 +13,7 @@
     </div>
 
     <div class="description-welcome">
-     <a href="{{pathFor 'admin'}}">Log In</a>
+     <a href="{{pathFor 'accounts'}}">Log In</a>
     </div>
 
 
@@ -21,6 +21,34 @@
 
   <div id="container" class="{{menuOpen}} {{overlayOpen}}">
     <section id="menu" class="overthrow">
+
+
+<!--
+{{#if currentUser}}
+          <div class="btns-group-vertical">
+            <a href="#" class="js-user-menu btn-secondary">
+              {{#if userMenuOpen}}
+                <span class="icon-arrow-up"></span>
+                {{else}}
+                <span class="icon-arrow-down"></span>
+              {{/if}}
+
+              {{emailLocalPart}}
+            </a>
+            {{#if userMenuOpen}}
+              <a class="js-logout btn-secondary">{{_ 'Logout'}}</a>
+            {{/if}}
+          </div>
+        {{else}}
+          <div class="btns-group">
+            <a href="{{pathFor 'signin'}}" class="btn-secondary">{{_ 'Sign In'}}</a>
+            <a href="{{pathFor 'join'}}" class="btn-secondary">{{_ 'Join'}}</a>
+          </div>
+        {{/if}}-->
+
+
+
+
       <a href="{{pathFor 'home'}}" class="{{activePage 'home'}}">
         <span class="wrapper-menu-item">
           <span class="icon-home"></span>

@@ -17,7 +17,6 @@ launch-screen
 
 # Packages from Atmosphere:
 tmeasday:publish-counts@0.3.1
-iron:router@0.9.4
 percolate:velocityjs
 percolate:wireframing
 mdg:camera
@@ -37,3 +36,11 @@ spacebars
 check
 standard-minifier-css
 standard-minifier-js
+accounts-ui
+accounts-password
+aldeed:template-extension
+constraint-solver
+iron:router
+useraccounts:iron-routing
+useraccounts:unstyled
+useraccounts:core
