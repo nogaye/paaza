@@ -18,6 +18,7 @@ Template.activity.helpers({
     return this.userName.split(' ')[0];
   },
   recipeTitle: function() {
+  
     return RecipesData[this.recipeName].title;
   },
   path: function() {
