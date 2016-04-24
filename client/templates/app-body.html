@@ -125,6 +125,28 @@
           <span class="title-menu">About</span>
         </span>
       </a>
+
+{{#if currentUser}}
+        
+          <a class="js-logout">
+        <span class="wrapper-menu-item">
+          <span class="icon-question"></span>
+          <span class="title-menu">LogOut</span>
+        </span>
+      </a>
+            
+        {{else}}
+      <a href="{{pathFor 'accounts'}}" class="{{activePage 'accounts'}}">
+        <span class="wrapper-menu-item">
+          <span class="icon-question"></span>
+          <span class="title-menu">LogIn</span>
+        </span>
+      </a>
+        {{/if}}
+
+
+
+
     </section>
 
       <div class="notifications">

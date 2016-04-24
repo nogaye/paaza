@@ -14,16 +14,19 @@ Template['override-atError'].replaces('atError');
 
 
 Template.accounts.helpers({
-  emailLocalPart() {
-    const email = Meteor.user().emails[0].address;
-    return email.substring(0, email.indexOf('@'));
+  emailLocalPart: function() {
+    //const email = Meteor.user().emails[0].address;
+    //return Meteor.user().userName.split(' ')[0];
+    return '';
   }
+
+
 });
 
 
 
     Template.accounts.events({
-    	'click .js-logout'() {
+'click .js-logout': function() {
     Meteor.logout();
 }
 });

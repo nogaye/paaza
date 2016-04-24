@@ -168,5 +168,8 @@ Template.appBody.events({
       this.callback();
       notifications.remove(this._id);
     }
-  }
+  },
+  'click .js-logout': function() {
+    Meteor.logout();
+}
 });
