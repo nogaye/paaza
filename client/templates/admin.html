@@ -5,11 +5,61 @@
       {{#if isAdmin}}
         <h1 class="title-admin">Admin</h1>
 
+        <a href="{{pathFor 'schools'}}">
+      <div class="list-title">Manage Users</div>
+      <div class="list-subtitle">Super admin  - can add admin users (super admins and school admins) and create schools. Create generic topics for all schools. First user is always super admin 
+      <br/>
+      School Admin - can add and manage teachers, students, parents; Create custom topics and facilitate forums and add news content
+      <br/>
+      Teacher - can manage student academic reports and enter remarks
+      <br/>
+      Parent - can view news, participate in forums and view students records
+      </div>
+</a>
+<br/>
+  <a href="{{pathFor 'schools'}}">
+      <div class="list-title">Manage Schools</div>
+      <div class="list-subtitle">Only Super admin can add new schools and school admins. School admin can manage the medadata for existing schools, add school news and facilitate forums</div>
+</a>
+<br/>
+<!--
+<a href="{{pathFor 'students'}}">
+      <div class="list-title">Students</div>
+      <div class="list-subtitle">Only school admin can add new students to schools. Teachers and school admins can manage existing students records and metadats. Teachers can add remarks , academic records etc</div>
+</a>
+<br/>
+ <a href="{{pathFor 'parents'}}">
+      <div class="list-title">Parents</div>
+      <div class="list-subtitle">Only school admin can add parents to a school and match parents to existing students. School admin can also generate parents token to enable parents log in to the application to participate in forums, read news and monitor students records </div>
+</a>
+<br/>
+   <a href="{{pathFor 'teachers'}}">
+      <div class="list-title">Teachers</div>
+      <div class="list-subtitle">Only school admin, who is also a teacher, can add teachers to schools</div>
+</a>
+<br/>
+<a href="{{pathFor 'news'}}">
+      <div class="list-title">News</div>
+      <div class="list-subtitle">Only school admin can create content for the school</div>
+</a>
+<br/>
+<a href="{{pathFor 'schools'}}">
+      <div class="list-title">Forums</div>
+      <div class="list-subtitle">Only school admin can facilitate forums, create new topics and delete offensive posts or comments</div>
+</a>
+<br/>
+<a href="{{pathFor 'fees'}}">
+      <div class="list-title">Fees</div>
+      <div class="list-subtitle">Only school admin can update school fees stucture</div>
+</a>-->
+
         <form>
           <label>Edit the front page news:</label>
           <textarea name="text" rows="5" placeholder="Show the latest Local Market news on the the frontpage...">{{latestNews.text}}</textarea>
           <button type="submit" class="btn-primary">Save</button>
         </form>
+      
+
       {{else}}
         <h1 class="title-admin">Forbidden</h1>
         

@@ -1,0 +1,65 @@
+<template name="schools">
+  <div id="schools">
+    <a href="/" class="back-desktop"><span class="icon-arrow-left-alt"></span> Back</a>
+    <div class="wrapper-admin">
+
+
+      {{#if isSuperAdmin}}
+        <h1 class="title-admin">Manage Schools</h1>
+
+{{currentSchool}}
+
+        <form>
+        <label>{{currentSchool._id}}</label>
+        <label>Name:</label>
+          <input type="text" name="schoolName" placeholder="Name">
+           <label>Phone Number:</label>
+          <input type="text" name="phoneNumber" rows="5" placeholder="Phone Number">
+          <label>Address:</label>
+          <textarea name="address" rows="5" placeholder="Address"></textarea>
+          <button type="submit" class="btn-primary">Save</button>
+        </form>
+<br/>
+
+<h1 class="title-admin">Schools</h1>
+
+      <div class="list-activities">
+     
+     
+
+          {{#each schools}}
+          
+          {{_id}} -  {{PhoneNumber}} - {{Name}} - {{Address}} - {{Moto}} - {{date}} - {{text}}
+
+<button class="delete">&times;</button>
+ 
+    <button class="edit">edit</button>
+ 
+
+            <br/>
+          
+        
+          
+          
+          {{else}}
+            <div class="wrapper-message">
+              <div class="title-message">No school has been created yet!</div>
+              <div class="subtitle-message">Create a new school</div>
+            </div>
+          {{/each}}
+      
+      </div>
+
+
+
+
+      {{else}}
+        <h1 class="title-admin">Forbidden</h1>
+        
+        {{#unless currentUser}}
+          <a class="login">Log in with Twitter</a>
+        {{/unless}}
+      {{/if}}
+    </div>
+  </div>
+</template>

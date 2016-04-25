@@ -6,6 +6,17 @@ Meteor.publish('news', function() {
   return News.find({}, {sort: {date: -1}, limit: 1});
 });
 
+Meteor.publish('schools', function() {
+  return Schools.find({}, {sort: {date: -1}, limit: 20});
+});
+
+
+ // Only return schools that has be asigned to school admin
+  Meteor.publish('mySchools', function () {
+    return Schools.find({_id: this.schoolId });
+      
+    });
+
 Meteor.publish('latestActivity', function () {
   return Activities.latest();
 });
