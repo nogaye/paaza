@@ -26,14 +26,24 @@ Template.schools.events({
     //const text = target.text.value;
 
     //var text = $(event.target).find('[name=text]').val();
-    Schools.insert({ 
-    Name: target.schoolName.value,
-    PhoneNumber: target.phoneNumber.value,
-    Address: target.address.value,
+    alert(this);
+if(this._id)
+{
+    Schools.update(this._id, {
+      $set: { Name: target.Name.value },
+  });
+    
+}
+else
+{
+Schools.insert({ 
+    Name: target.Name.value,
+    PhoneNumber: target.PhoneNumber.value,
+    Address: target.Address.value,
     //Moto: target.moto.value, 
     date: new Date 
     });
-
+}
 
 
     alert('Saved latest news');

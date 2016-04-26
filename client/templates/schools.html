@@ -1,46 +1,52 @@
 <template name="schools">
-  <div id="schools">
+   <div class="content-scrollable">
+  <div class="form_template">
     <a href="/" class="back-desktop"><span class="icon-arrow-left-alt"></span> Back</a>
+     
+
     <div class="wrapper-admin">
 
 
       {{#if isSuperAdmin}}
         <h1 class="title-admin">Manage Schools</h1>
 
-{{currentSchool}}
+ {{> schoolsForm this}}  
 
-        <form>
-        <label>{{currentSchool._id}}</label>
-        <label>Name:</label>
-          <input type="text" name="schoolName" placeholder="Name">
-           <label>Phone Number:</label>
-          <input type="text" name="phoneNumber" rows="5" placeholder="Phone Number">
-          <label>Address:</label>
-          <textarea name="address" rows="5" placeholder="Address"></textarea>
-          <button type="submit" class="btn-primary">Save</button>
-        </form>
 <br/>
 
 <h1 class="title-admin">Schools</h1>
 
-      <div class="list-activities">
+      
      
-     
+            <table style="width:100%">
+                <thead>
+                    <tr>                    
+                        <th>Name</th>
+<th>PhoneNumber</th>                  
+                        <th>Created by</th>                    
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each schools}}
+                    <tr>
+                        <td>{{Name}}</td>
+<td>{{PhoneNumber}}</td>
+                        <td>{{createdUser.profile.name}}</td>
+                        <td>
+                            <a href="{{pathFor 'schools' _id=this._id}}">Edit</a>
+                            <button class="delete">Delete &times;</button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        
+
+
+
 
           {{#each schools}}
-          
-          {{_id}} -  {{PhoneNumber}} - {{Name}} - {{Address}} - {{Moto}} - {{date}} - {{text}}
-
-<button class="delete">&times;</button>
- 
-    <button class="edit">edit</button>
- 
-
-            <br/>
-          
-        
-          
-          
           {{else}}
             <div class="wrapper-message">
               <div class="title-message">No school has been created yet!</div>
@@ -48,7 +54,7 @@
             </div>
           {{/each}}
       
-      </div>
+     
 
 
 
@@ -62,4 +68,5 @@
       {{/if}}
     </div>
   </div>
+    </div>
 </template>

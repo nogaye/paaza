@@ -1,5 +1,6 @@
 <template name="admin">
   <div id="admin">
+   <div class="content-scrollable">
     <a href="/" class="back-desktop"><span class="icon-arrow-left-alt"></span> Back</a>
     <div class="wrapper-admin">
       {{#if isAdmin}}
@@ -22,7 +23,7 @@
       <div class="list-subtitle">Only Super admin can add new schools and school admins. School admin can manage the medadata for existing schools, add school news and facilitate forums</div>
 </a>
 <br/>
-<!--
+
 <a href="{{pathFor 'students'}}">
       <div class="list-title">Students</div>
       <div class="list-subtitle">Only school admin can add new students to schools. Teachers and school admins can manage existing students records and metadats. Teachers can add remarks , academic records etc</div>
@@ -51,7 +52,7 @@
 <a href="{{pathFor 'fees'}}">
       <div class="list-title">Fees</div>
       <div class="list-subtitle">Only school admin can update school fees stucture</div>
-</a>-->
+</a>
 
         <form>
           <label>Edit the front page news:</label>
@@ -69,4 +70,5 @@
       {{/if}}
     </div>
   </div>
+    </div>
 </template>
