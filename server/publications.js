@@ -7,9 +7,16 @@ Meteor.publish('news', function() {
 });
 
 Meteor.publish('schools', function() {
-  return Schools.find({}, {sort: {date: -1}, limit: 20});
+  return Schools.find({}, {sort: {date: -1}, limit: 100});
 });
 
+Meteor.publish('parents', function() {
+  return Parents.find({}, {sort: {date: -1}, limit: 100});
+});
+
+Meteor.publish('students', function() {
+  return Students.find({}, {sort: {date: -1}, limit: 100});
+});
 
  // Only return schools that has be asigned to school admin
   Meteor.publish('mySchools', function () {

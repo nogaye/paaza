@@ -1,6 +1,6 @@
-<template name="student">
+<template name="studentReport">
 
-  <div class="page student {{activeTabClass}}">
+  <div class="page studentReport {{activeTabClass}}">
     {{#nav title='Student' black=true back=true}}
       {{#if bookmarked}}
         <a href="#" class="nav-item js-remove-bookmark bookmarked"><span class="icon-bookmark"></span></a>
@@ -21,8 +21,8 @@
       </div>
 
       <div class="btns-group">
-        <a class="btn-secondary {{#if isActiveTab 'make'}}active{{/if}} {{#if isActiveTab 'student'}}no-state{{/if}} js-show-recipe">Academic</a>
-        <a class="btn-secondary {{#if isActiveTab 'feed'}}active{{/if}} {{#if isActiveTab 'student'}}no-state{{/if}} js-show-feed">Remarks</a>
+        <a class="btn-secondary {{#if isActiveTab 'make'}}active{{/if}} {{#if isActiveTab 'studentReport'}}no-state{{/if}} js-show-recipe">Academic</a>
+        <a class="btn-secondary {{#if isActiveTab 'feed'}}active{{/if}} {{#if isActiveTab 'studentReport'}}no-state{{/if}} js-show-feed">Remarks</a>
       </div>
     </div>
 

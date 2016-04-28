@@ -1,4 +1,4 @@
-.form_template {
+.page.admin {
   .position(absolute, 0, 0, 0, 0);
   background: @color-raw;
 
@@ -12,7 +12,7 @@
   .wrapper-admin {
     text-align: center;
     margin: 5rem 5%;
-    @media screen and (min-width: 30em) { margin: 7rem 15%; }
+    @media screen and (min-width: 30em) { margin: 1rem 15%; }
   }
 
   .title-admin {
@@ -46,5 +46,23 @@
 
   .btn-primary {
     width: 100%;
+  }
+  .content-scrollable { padding-top: 3em; }
+
+  .list-activities {
+    .transition(all 700ms ease-in);
+  }
+  .list-activities.loading {
+    min-height: 100%;
+    .icon-sync {
+      .animation(spin 2s infinite linear);
+      margin-bottom: .5em;
+    }
+    .title-message {
+      .font-s3;
+      .title-caps;
+      .type-black;
+      color: @color-medium-rare;
+    }
   }
 }

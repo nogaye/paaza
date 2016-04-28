@@ -1,0 +1,46 @@
+<template name="schoolsView">
+    <div class="page admin">
+   <div class="content-scrollable">
+
+ <a href="/schools" class="back-desktop"><span class="icon-arrow-left-alt"></span> Back</a>
+
+ <div class="wrapper-admin">
+
+ <div class="title-page">School Details</div>
+
+     <form>
+      <label>Id</label>
+        <label>{{_id}}</label>
+        <br/>
+        <label>Name:</label>
+          <label>{{Name}}</label>
+          <br/>
+           <label>Phone Number:</label>
+          <label>{{PhoneNumber}}</label>
+          <br/>
+          <label>Address:</label>
+         <label>{{Address}}</label>
+         <br/>
+            <label>Created By:</label>
+         <label>{{CreatedBy}}</label>
+         <br/>
+            <label>Created Date:</label>
+         <label>{{CreatedDate}}</label>
+         <br/>
+            <label>Updated By:</label>
+         <label>{{UpdatedBy}}</label>
+         <br/>
+            <label>Updated Date:</label>
+         <label>{{UpdatedDate}}</label>
+         <br/>
+<label>Image:</label>
+         
+       <div class="bg-image" style="background-image: url('{{image}}');"></div>
+          
+        </form>
+
+
+    </div>
+  </div>
+    </div>
+</template>

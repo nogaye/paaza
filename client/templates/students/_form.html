@@ -1,0 +1,39 @@
+<template name="studentsForm">
+       
+      <!--  {{#if this}}
+      <a href="{{pathFor 'schools' _id=null}}">Create new</a>
+      {{/if}}
+      -->
+
+        <form>
+        <label>{{_id}}</label>
+        <label>First Name:</label>
+          <input type="text" name="FirstName"  value="{{FirstName}}"  placeholder="First name">
+          <label>Last Name:</label>
+          <input type="text" name="LastName"  value="{{LastName}}"  placeholder="Last name">
+           <label>Phone Number:</label>
+          <input type="text" name="PhoneNumber"  value="{{PhoneNumber}}" placeholder="Phone number">
+          <label>Email Address:</label>
+          <input type="text" name="EmailAddress"  value="{{EmailAddress}}" placeholder="Email address">
+          
+          <label>Home Address:</label>
+          <textarea name="HomeAddress" value="{{HomeAddress}}"  rows="3" placeholder="HomeAddress"></textarea>
+
+<label>School Id:</label>
+          <input type="text" name="SchoolId"  value="{{SchoolId}}" placeholder="School Id">
+          <label>Student Id:</label>
+          <input type="text" name="StudentId"  value="{{StudentId}}" placeholder="Student Id">
+
+<label>Image Url:</label>
+          <input type="text" name="ImageUrl"  value="{{ImageUrl}}" placeholder="Image Url">
+      {{#if this}}
+      <button type="submit" class="btn-primary">Update</button>
+      {{else}}
+      <button type="submit" class="btn-primary">Save</button>
+      {{/if}}
+          
+        </form>
+
+
+
+</template>

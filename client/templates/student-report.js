@@ -1,24 +1,24 @@
 var STUDENT_TAB_KEY = 'studentShowTab';
 
-Template.student.onCreated(function() {
+Template.studentReport.onCreated(function() {
   //if (Router.current().params.activityId)
-    Template.student.setTab('feed');
+    Template.studentReport.setTab('feed');
   //else
     //Template.student.setTab('recipe');
 });
 
-Template.student.onRendered(function () {
+Template.studentReport.onRendered(function () {
   this.$('.recipe').touchwipe({
     wipeDown: function () {
       if (Session.equals(STUDENT_TAB_KEY, 'recipe'))
-        Template.student.setTab('make')
+        Template.studentReport.setTab('make')
     },
     preventDefaultEvents: false
   });
   this.$('.attribution-recipe').touchwipe({
     wipeUp: function () {
       if (! Session.equals(STUDENT_TAB_KEY, 'recipe'))
-        Template.student.setTab('recipe')
+        Template.studentReport.setTab('recipe')
     },
     preventDefaultEvents: false
   });
@@ -29,7 +29,7 @@ Template.student.onRendered(function () {
 //   so we need to help the transition out by attaching another
 //   class that indicates if the feed tab should slide out of the
 //   way smoothly, right away, or after the transition is over
-Template.student.setTab = function(tab) {
+Template.studentReport.setTab = function(tab) {
   var lastTab = Session.get(STUDENT_TAB_KEY);
   Session.set(STUDENT_TAB_KEY, tab);
   
@@ -40,7 +40,7 @@ Template.student.setTab = function(tab) {
   $('.feed-scrollable').toggleClass('delayed', toRecipe);
 }
 
-Template.student.helpers({
+Template.studentReport.helpers({
   isActiveTab: function(name) {
     return Session.equals(STUDENT_TAB_KEY, name);
   },
@@ -55,7 +55,7 @@ Template.student.helpers({
   }
 });
 
-Template.student.events({
+Template.studentReport.events({
   'click .js-add-bookmark': function(event) {
     event.preventDefault();
 
@@ -73,16 +73,16 @@ Template.student.events({
   
   'click .js-show-recipe': function(event) {
     event.stopPropagation();
-    Template.student.setTab('make')
+    Template.studentReport.setTab('make')
   },
   
   'click .js-show-feed': function(event) {
     event.stopPropagation();
-    Template.student.setTab('feed')
+    Template.studentReport.setTab('feed')
   },
   
   'click .js-uncollapse': function() {
-    Template.student.setTab('recipe')
+    Template.studentReport.setTab('recipe')
   },
 
   'click .js-share': function() {

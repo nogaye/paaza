@@ -1,6 +1,6 @@
 Template.studentItem.helpers({
   path: function () {
-    return Router.path('student', this.recipe);
+    return Router.path('studentReport', this.recipe);
   },
   
   highlightedClass: function () {

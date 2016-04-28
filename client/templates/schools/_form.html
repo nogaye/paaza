@@ -1,19 +1,19 @@
 <template name="schoolsForm">
        
-        {{#if this}}
+      <!--  {{#if this}}
       <a href="{{pathFor 'schools' _id=null}}">Create new</a>
       {{/if}}
-      
-
+      -->
         <form>
         <label>{{_id}}</label>
         <label>Name:</label>
           <input type="text" name="Name"  value="{{Name}}"  placeholder="Name">
            <label>Phone Number:</label>
-          <input type="text" name="PhoneNumber"  value="{{PhoneNumber}}" rows="5" placeholder="Phone Number">
+          <input type="text" name="PhoneNumber"  value="{{PhoneNumber}}" placeholder="Phone Number">
           <label>Address:</label>
           <textarea name="Address" value="{{Address}}"  rows="3" placeholder="Address"></textarea>
-
+<label>Image Url:</label>
+          <input type="text" name="ImageUrl"  value="{{ImageUrl}}" placeholder="Image Url">
       {{#if this}}
       <button type="submit" class="btn-primary">Update</button>
       {{else}}
@@ -21,4 +21,7 @@
       {{/if}}
           
         </form>
+
+
+
 </template>
