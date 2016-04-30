@@ -33,8 +33,15 @@ UI.registerHelper('recipeImage', function(options) {
 UI.registerHelper('studentImage', function(options) {
   var size = options.hash.size || 'large';
 
-  if (options.hash.recipe)
-    return '/img/students/' + DIMENSIONS[size] + '/' + options.hash.recipe.name + '.jpg';
+  if (options.hash.student)
+    return '/img/students/' + DIMENSIONS[size] + '/' + options.hash.student.ImageUrl + '.jpg';
+});
+
+UI.registerHelper('schoolImage', function(options) {
+  var size = options.hash.size || 'large';
+
+  if (options.hash.school)
+    return '/img/schools/' + DIMENSIONS[size] + '/' + options.hash.school.ImageUrl + '.jpg';
 });
 
 

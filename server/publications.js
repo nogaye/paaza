@@ -13,8 +13,11 @@ Meteor.publish('schools', function() {
   return Schools.find({}, {sort: {date: -1}, limit: 100});
 });
 
-Meteor.publish('currentSchool', function() {
-  return Schools.current();
+Meteor.publish('mySchools', function() {
+  return Schools.mySchools();
+});
+Meteor.publish('myStudents', function() {
+  return Students.myStudents();
 });
 
 
@@ -27,10 +30,10 @@ Meteor.publish('students', function() {
 });
 
  // Only return schools that has be asigned to school admin
-  Meteor.publish('mySchools', function () {
-    return Schools.find({_id: this.schoolId });
+  //Meteor.publish('mySchools', function () {
+  //  return Schools.find({_id: this.schoolId });
       
-    });
+   // });
 
 Meteor.publish('latestActivity', function () {
   return Activities.latest();

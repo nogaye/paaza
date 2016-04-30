@@ -1,0 +1,18 @@
+<template name="studentItem">
+  <!--<a class="item-recipe {{highlightedClass}}" href="{{path}}">-->
+
+<a class="item-recipe {{highlightedClass}}" href="{{pathFor 'studentReport' _id=student._id}}">
+
+    {{#with student}}
+      <span class="attribution">
+        <span class="title-recipe">{{FirstName}}  {{LastName}}</span>
+        <span class="metadata-recipe">
+          <span class="author-recipe">{{Class}}</span>
+         <!-- <span class="bookmarks-recipe"><span class="icon-bookmark"></span> {{bookmarkCount}}</span>-->
+        </span>
+      </span>
+    {{/with}}
+
+    <img src="{{studentImage student=student size=size}}" />
+  </a>
+</template>

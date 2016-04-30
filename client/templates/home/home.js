@@ -23,7 +23,11 @@ Template.home.helpers({
     return FEATURED_COUNT > 1;
   },
    currentSchool: function() {
-    console.log(Schools.current().fetch()[0]);
-    return Schools.current().fetch()[0];
+    console.log(Schools.mySchools().fetch()[0]);
+    return Schools.mySchools().fetch()[0];
+  },
+     myStudents: function() {
+    console.log(Students.myStudents().fetch());
+    return Students.myStudents().fetch();
   },
 });

@@ -4,9 +4,9 @@
     {{>nav title='Paaza' black=true}}
 
     <div class="content-scrollable">
-      <div class="bg-image home" style="background-image: url('{{currentSchool.ImageUrl}}');">
+      <div class="bg-image home" style="background-image: url('{{schoolImage school=currentSchool size=large}}');">
         <h1 class="title-home">
-          <img src="img/app/logo-local.svg" alt="Paaza"/>
+         <!-- <img src="img/app/logo-local.svg" alt="Paaza"/> -->
         </h1>
         <span class="hours">
         <span class="title-callout">{{currentSchool.Name}}</span>
@@ -20,19 +20,23 @@
 
       <div class="callout-news">
         <span class="title-callout">TOP NEWS</span>
+        <br/>
         {{latestNews.text}}
       </div>
-       <a href="{{pathFor 'recipes'}}" class="btn-primary">Explore School News</a>
+       <a href="{{pathFor 'recipes'}}" class="btn-primary">More News</a>
     
 
       <h2 class="list-title">STUDENT REPORTS</h2>
       <div class="list-subtitle">View student academic reports and general progress</div>
+      
+<!--TODO: for multiple odd students, make the first image large-->
       <div class="list-recipes">
-        {{#each featuredRecipes}}
+
+        {{#each myStudents}}
             {{#if multipleStudents}}
-       {{> studentItem recipe=this size='small'}}
+       {{> studentItem student=this size='small'}}
       {{else}}
-        {{> studentItem recipe=this size='large'}}
+        {{> studentItem student=this size='large'}}
       {{/if}}
           
         {{/each}}
@@ -52,7 +56,7 @@
           </div>
         {{/each}}
       </div>
-      <a href="{{pathFor 'feed'}}" class="btn-primary">Explore forums</a>
+      <a href="{{pathFor 'feed'}}" class="btn-primary">More forums</a>
 
      
     </div>
