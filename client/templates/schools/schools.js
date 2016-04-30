@@ -15,9 +15,10 @@ var adminHelpers = {
 };
 
 var adminEvents = {
+ 
   'submit form': function(event) {
     event.preventDefault();
-
+ console.log(this);
     const target = event.target;
     //const text = target.text.value;
 

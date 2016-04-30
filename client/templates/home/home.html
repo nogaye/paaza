@@ -4,14 +4,16 @@
     {{>nav title='Paaza' black=true}}
 
     <div class="content-scrollable">
-      <div class="bg-image home">
+      <div class="bg-image home" style="background-image: url('{{currentSchool.ImageUrl}}');">
         <h1 class="title-home">
           <img src="img/app/logo-local.svg" alt="Paaza"/>
         </h1>
         <span class="hours">
-        <span class="title-callout">Moi University</span>
+        <span class="title-callout">{{currentSchool.Name}}</span>
+
         <br/>
-        0722-4320644</span>
+        <span>{{currentSchool.PhoneNumber}} </span>
+       </span>
         <span class="arrow"></span>
       </div>
 

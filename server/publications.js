@@ -1,3 +1,6 @@
+
+//Only publish tasks that are public or belong to the current user
+
 Meteor.publish('bookmarkCounts', function() {
   return BookmarkCounts.find();
 });
@@ -9,6 +12,11 @@ Meteor.publish('news', function() {
 Meteor.publish('schools', function() {
   return Schools.find({}, {sort: {date: -1}, limit: 100});
 });
+
+Meteor.publish('currentSchool', function() {
+  return Schools.current();
+});
+
 
 Meteor.publish('parents', function() {
   return Parents.find({}, {sort: {date: -1}, limit: 100});
