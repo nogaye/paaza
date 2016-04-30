@@ -87,3 +87,14 @@ Template.studentsUpdate.helpers(adminHelpers);
 Template.students.events(adminEvents);
 Template.studentsInsert.events(adminEvents);
 Template.studentsUpdate.events(adminEvents);
+
+//News
+
+Template.news.helpers(adminHelpers);
+Template.newsInsert.helpers(adminHelpers);
+Template.newsUpdate.helpers(adminHelpers);
+
+
+Template.news.events(adminEvents);
+Template.newsInsert.events(adminEvents);
+Template.newsUpdate.events(adminEvents);

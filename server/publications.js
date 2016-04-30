@@ -1,32 +1,40 @@
 
 //Only publish tasks that are public or belong to the current user
-
-Meteor.publish('bookmarkCounts', function() {
-  return BookmarkCounts.find();
-});
-
-Meteor.publish('news', function() {
-  return News.find({}, {sort: {date: -1}, limit: 1});
-});
-
-Meteor.publish('schools', function() {
-  return Schools.find({}, {sort: {date: -1}, limit: 100});
-});
-
-Meteor.publish('mySchools', function() {
-  return Schools.mySchools();
+Meteor.publish('mySchool', function() {
+  //TODO: only publish current school
+  return Schools.mySchool();
 });
 Meteor.publish('myStudents', function() {
   return Students.myStudents();
 });
 
 
+
+Meteor.publish('bookmarkCounts', function() {
+  return BookmarkCounts.find();
+});
+
+Meteor.publish('schoolNews', function() {
+  return News.schoolNews();
+});
+
+
+
+
+//===== Only publish for admin =====
+Meteor.publish('news', function() {
+  return News.find({}, {sort: {CreatedDate: -1}, limit: 100});
+});
+Meteor.publish('schools', function() {
+  return Schools.find({}, {sort: {CreatedDate: -1}, limit: 100});
+});
+
 Meteor.publish('parents', function() {
-  return Parents.find({}, {sort: {date: -1}, limit: 100});
+  return Parents.find({}, {sort: {CreatedDate: -1}, limit: 100});
 });
 
 Meteor.publish('students', function() {
-  return Students.find({}, {sort: {date: -1}, limit: 100});
+  return Students.find({}, {sort: {CreatedDate: -1}, limit: 100});
 });
 
  // Only return schools that has be asigned to school admin

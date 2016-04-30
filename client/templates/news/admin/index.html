@@ -1,0 +1,78 @@
+<template name="news">
+    <div class="page admin">
+   <div class="content-scrollable">
+
+ <a href="/admin" class="back-desktop"><span class="icon-arrow-left-alt"></span> Back</a>
+
+ <div class="wrapper-admin">
+
+ <div class="title-page">News</div>
+
+      {{#if isSuperAdmin}}
+        
+
+   <!--{{> schoolsForm this}} -->
+
+ <br/>
+<br/>
+<a href="{{pathFor 'newsInsert'}}">add news</a>
+  
+<br/>
+<br/>
+  <div class="list-activities {{#unless ready}}loading{{/unless}}">
+        {{#if ready}}
+          {{#if schools.count}}
+
+<table style="width:100%; padding: 10px; border-spacing: 5px; text-align: left;">
+                <thead >
+                    <tr >   
+                             <th style="font-weight: bold;"> Title</th>        
+                        <th style="font-weight: bold;"> Content</th>
+<th style="font-weight: bold;">School Id</th> 
+<th style="font-weight: bold;">Front Page</th> 
+                        <th style="font-weight: bold;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each schools}}
+                    <tr>
+                    <td>{{Title}}</td>
+                        <td>{{Content}}</td>
+<td>{{SchoolId}}</td>
+<td><input type="checkbox" name="FrontPage" value="{{FrontPage}}" ></td>
+                        <td>
+                            <a href="{{pathFor 'newsUpdate' _id=this._id}}">Edit &nbsp; &nbsp;</a>
+                            <a class="delete">Delete &nbsp; &nbsp;</a>
+                            <a href="{{pathFor 'newsView' _id=this._id}}">View</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+          {{else}}
+            <div class="wrapper-message">
+              <div class="title-message">No news exists yet!</div>
+              <div class="subtitle-message">Be the first to create one</div>
+            </div>
+          {{/if}}
+        {{else}}
+          <div class="wrapper-message">
+            <div class="icon-sync"></div>
+            <div class="title-message">Loading</div>
+          </div>
+        {{/if}}
+      </div>
+
+
+
+      {{else}}
+        <h1 class="title-admin">Forbidden</h1>
+        
+        {{#unless currentUser}}
+          <a class="login">Log in with Twitter</a>
+        {{/unless}}
+      {{/if}}
+    </div>
+  </div>
+    </div>
+</template>

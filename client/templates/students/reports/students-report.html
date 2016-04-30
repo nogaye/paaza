@@ -6,9 +6,9 @@
       <div class="list-recipes">
         {{#each this}}
           {{#if highlighted}}
-            {{> studentItem recipe=this size='large'}}
+            {{> studentItem student=this size='large'}}
           {{else}}
-            {{> studentItem recipe=this size='small'}}
+            {{> studentItem student=this size='small'}}
           {{/if}}
         {{/each}}
       </div>

@@ -1,0 +1,26 @@
+<template name="newsFeed">
+  <div class="page news-feed">
+
+    {{>nav title="News Feed"}}
+
+    <div class="content-scrollable">
+      <div class="list-activities {{#unless ready}}loading{{/unless}}">
+        {{#if ready}}
+          {{#each news}}
+            {{> newsItem}}
+          {{else}}
+            <div class="wrapper-message">
+              <div class="title-message">No news item exists yet!</div>
+              <!--<div class="subtitle-message">Share that you made a recipe and it will show up here.</div>-->
+            </div>
+          {{/each}}
+        {{else}}
+          <div class="wrapper-message">
+            <div class="icon-sync"></div>
+            <div class="title-message">Loading</div>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,23 @@
+<template name="newsItem">
+  <a href="{{path}}" class="item-activity">
+
+    <span class="attribution">
+      <span class="avatar">
+        <img src="img/schools/640x480/uon.jpg" class="image-avatar">
+      </span>
+      <span class="meta">
+        
+     <span class="recipe">{{Title}}</span> 
+     <br/>
+         <span class="author">{{CreatedBy}}</span> 
+{{#if SchoolId}}<span class="location">&mdash;{{SchoolId}}</span>{{/if}}
+       <span class="bookmarks-recipe"><span class="icon-bookmark"></span> 1{{LikesCount}}</span>
+        <br/> {{Content}}
+       
+       </span>
+    </span>
+
+    {{#if ImageUrl}}<div class="bg-image" style="background-image: url('{{ImageUrl}}');"></div>{{/if}}
+
+  </a>
+</template>

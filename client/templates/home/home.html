@@ -4,15 +4,15 @@
     {{>nav title='Paaza' black=true}}
 
     <div class="content-scrollable">
-      <div class="bg-image home" style="background-image: url('{{schoolImage school=currentSchool size=large}}');">
+      <div class="bg-image home" style="background-image: url('{{schoolImage school=mySchool size=large}}');">
         <h1 class="title-home">
          <!-- <img src="img/app/logo-local.svg" alt="Paaza"/> -->
         </h1>
         <span class="hours">
-        <span class="title-callout">{{currentSchool.Name}}</span>
+        <span class="title-callout">{{mySchool.Name}}</span>
 
         <br/>
-        <span>{{currentSchool.PhoneNumber}} </span>
+        <span>{{mySchool.PhoneNumber}} </span>
        </span>
         <span class="arrow"></span>
       </div>
@@ -21,9 +21,9 @@
       <div class="callout-news">
         <span class="title-callout">TOP NEWS</span>
         <br/>
-        {{latestNews.text}}
+        {{latestNews.Title}}
       </div>
-       <a href="{{pathFor 'recipes'}}" class="btn-primary">More News</a>
+       <a href="{{pathFor 'newsFeed'}}" class="btn-primary">More News</a>
     
 
       <h2 class="list-title">STUDENT REPORTS</h2>

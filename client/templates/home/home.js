@@ -22,12 +22,12 @@ Template.home.helpers({
    multipleStudents: function() {
     return FEATURED_COUNT > 1;
   },
-   currentSchool: function() {
-    console.log(Schools.mySchools().fetch()[0]);
-    return Schools.mySchools().fetch()[0];
+   mySchool: function() {
+    //console.log(Schools.mySchools().fetch()[0]);
+    return Schools.mySchool().fetch()[0];
   },
      myStudents: function() {
-    console.log(Students.myStudents().fetch());
+    //console.log(Students.myStudents().fetch());
     return Students.myStudents().fetch();
   },
 });
