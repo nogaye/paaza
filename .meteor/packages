@@ -37,3 +37,8 @@ spacebars
 check
 standard-minifier-css
 standard-minifier-js
+accounts-ui
+accounts-password
+useraccounts:bootstrap
+twbs:bootstrap
+aldeed:template-extension

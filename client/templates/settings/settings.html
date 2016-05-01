@@ -1,0 +1,40 @@
+<template name="settings">
+  <div class="page settings">
+     {{#if currentUser}}
+    {{> nav title='Paaza'}}
+     {{else}}
+       {{> nav title='Paaza' noNav=true}}
+      {{/if}}
+
+    <div class="content-scrollable">
+   
+  
+
+
+
+
+      <div class="details-settings">
+ {{#unless isLoggedIn}}
+
+
+{{> atForm}}
+
+ {{/unless}}
+
+      </div>
+
+    </div>
+
+ {{#if isLoggedIn}}
+    <a class="btn-primary js-logout" target="_blank">Sign Out</a>
+  <!--  <a href="https://www.meteor.com" class="btn-primary js-open" target="_blank">Learn More</a> -->
+ {{/if}}
+
+  </div>
+</template>
+
+<template name="override-atPwdFormBtn">
+  <button type="submit" class="btn-primary" id="at-btn">
+    {{buttonText}}
+  </button>
+</template>

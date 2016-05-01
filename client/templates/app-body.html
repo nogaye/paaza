@@ -98,7 +98,7 @@
           <span class="title-menu">Bookmarks</span>
         </span>
       </a>
-         <a href="{{pathFor 'about'}}" class="{{activePage 'about'}}">
+         <a href="{{pathFor 'settings'}}" class="{{activePage 'settings'}}">
         <span class="wrapper-menu-item">
           <span class="icon-question"></span>
           <span class="title-menu">Settings</span>
@@ -117,6 +117,28 @@
           <span class="title-menu">Admin</span>
         </span>
       </a>
+
+{{#if currentUser}}
+        
+          <a class="js-logout">
+        <span class="wrapper-menu-item">
+          <span class="icon-question"></span>
+          <span class="title-menu">SignOut</span>
+        </span>
+      </a>
+            
+        {{else}}
+      <a href="{{pathFor 'settings'}}" class="{{activePage 'settings'}}">
+        <span class="wrapper-menu-item">
+          <span class="icon-question"></span>
+          <span class="title-menu">SignIn</span>
+        </span>
+      </a>
+        {{/if}}
+
+
+
+
     </section>
 
       <div class="notifications">
