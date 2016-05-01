@@ -1,0 +1,64 @@
+<template name="usersView">
+    <div class="page admin">
+   <div class="content-scrollable">
+
+ <a href="/admin" class="back-desktop"><span class="icon-arrow-left-alt"></span> Back</a>
+
+ <div class="wrapper-admin">
+
+ <div class="title-page">Users Details</div>
+
+     <form>
+      <label>Id</label>
+        <label>{{_id}}</label>
+         <br/>
+        <label>Admin:</label>
+          <label>{{admin}}</label>
+        <br/>
+        <label>bookmarkedRecipeNames:</label>
+          <label>{{bookmarkedRecipeNames}}</label>
+          <br/>
+
+   <label>Profile:</label>
+          <label>{{profile}}</label>
+        <br/>
+           <label>Services:</label>
+          <label>{{services}}</label>
+        <br/>
+           <label>Email:</label>
+          <label>{{emails}}</label>
+        <br/>
+      <label>Phone Number:</label>
+          <label>{{PhoneNumber}}</label>
+        <br/>
+           <label>School Id:</label>
+          <label>{{SchoolId}}</label>
+       
+         <br/>
+            <label>Created By:</label>
+         <label>{{CreatedBy}}</label>
+         <br/>
+            <label>Created Date:</label>
+         <label>{{CreatedDate}}</label>
+         <br/>
+            <label>Updated By:</label>
+         <label>{{UpdatedBy}}</label>
+         <br/>
+            <label>Updated Date:</label>
+         <label>{{UpdatedDate}}</label>
+         <br/>
+           <br/>
+            <label>Image Url:</label>
+         <label>{{ImageUrl}}</label>
+         <br/>
+<label>Image:</label>
+        
+       <div class="bg-image" style="background-image: url('{{ImageUrl}}');"></div>
+          
+        </form>
+
+
+    </div>
+  </div>
+    </div>
+</template>

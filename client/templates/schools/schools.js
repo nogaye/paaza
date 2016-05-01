@@ -7,7 +7,10 @@ var adminHelpers = {
   },
   
     schools: function() {
-      return Router.current().all();
+
+      var all = Router.current().all();
+console.log(all);
+      return all;
   },
   ready: function() {
     return Router.current().subscriptionItems.ready();
@@ -98,3 +101,14 @@ Template.newsUpdate.helpers(adminHelpers);
 Template.news.events(adminEvents);
 Template.newsInsert.events(adminEvents);
 Template.newsUpdate.events(adminEvents);
+
+//Users
+
+Template.users.helpers(adminHelpers);
+Template.usersInsert.helpers(adminHelpers);
+Template.usersUpdate.helpers(adminHelpers);
+
+
+Template.users.events(adminEvents);
+Template.usersInsert.events(adminEvents);
+Template.usersUpdate.events(adminEvents);

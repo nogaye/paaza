@@ -6,7 +6,7 @@
       {{#if isAdmin}}
         <h1 class="title-admin">Admin</h1>
 
-        <a href="{{pathFor 'schools'}}">
+        <a href="{{pathFor 'users'}}">
       <div class="list-title">Manage Users</div>
       <div class="list-subtitle">Super admin  - can add admin users (super admins and school admins) and create schools. Create generic topics for all schools. First user is always super admin 
       <br/>
@@ -58,11 +58,11 @@
       <div class="list-title">Resources</div>
       <div class="list-subtitle">Links to important school documents</div>
 </a>
-        <form>
+       <!-- <form>
           <label>Edit the front page news:</label>
           <textarea name="text" rows="5" placeholder="Show the latest Local Market news on the the frontpage...">{{latestNews.text}}</textarea>
           <button type="submit" class="btn-primary">Save</button>
-        </form>
+        </form>-->
       
 
       {{else}}

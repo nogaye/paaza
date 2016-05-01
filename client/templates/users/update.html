@@ -1,0 +1,26 @@
+<template name="usersUpdate">
+    <div class="page admin">
+   <div class="content-scrollable">
+
+ <a href="/users" class="back-desktop"><span class="icon-arrow-left-alt"></span> Back</a>
+
+ <div class="wrapper-admin">
+
+ <div class="title-page">Update users</div>
+
+      {{#if isSuperAdmin}}
+    
+   {{> usersForm this}} 
+
+
+      {{else}}
+        <h1 class="title-admin">Forbidden</h1>
+        
+        {{#unless currentUser}}
+          <a class="login">Log in with Twitter</a>
+        {{/unless}}
+      {{/if}}
+    </div>
+  </div>
+    </div>
+</template>

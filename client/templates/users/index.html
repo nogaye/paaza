@@ -1,4 +1,4 @@
-<template name="parents">
+<template name="users">
     <div class="page admin">
    <div class="content-scrollable">
 
@@ -6,17 +6,16 @@
 
  <div class="wrapper-admin">
 
- <div class="title-page">Parents</div>
+ <div class="title-page">Users</div>
 
       {{#if isSuperAdmin}}
         
 
-   <!--{{> schoolsForm this}} -->
-
+   <!--
  <br/>
 <br/>
-<a href="{{pathFor 'parentsInsert'}}">create new parent profile</a>
-  
+<a href="{{pathFor 'usersInsert'}}">add users</a>
+  -->
 <br/>
 <br/>
   <div class="list-activities {{#unless ready}}loading{{/unless}}">
@@ -25,32 +24,25 @@
 
 <table style="width:100%; padding: 10px; border-spacing: 5px; text-align: left;">
                 <thead >
-                    <tr >                    
-                        <th style="font-weight: bold;"> First Name</th>
-                        <th style="font-weight: bold;"> Last Name</th>
-<th style="font-weight: bold;">PhoneNumber</th>  
-<th  style="font-weight: bold;">Email Address</th>  
-<th style="font-weight: bold;">School</th>   
-<th style="font-weight: bold;">Student</th>   
-<th style="font-weight: bold;">Login Token</th>                   
+                    <tr >   
+                             <th style="font-weight: bold;"> Id</th>        
+                        <th style="font-weight: bold;"> Content</th>
+<th style="font-weight: bold;">School Id</th> 
+<th style="font-weight: bold;">Front Page</th> 
                         <th style="font-weight: bold;">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {{#each schools}}
                     <tr>
-                        <td>{{FirstName}}</td>
-                        <td>{{LastName}}</td>
-
-<td>{{PhoneNumber}}</td>
-<td>{{EmailAddress}}</td>
+                    <td>{{_id}}</td>
+                        <td>{{Content}}</td>
 <td>{{SchoolId}}</td>
-<td>{{StudentId}}</td>
-<td>{{LoginToken}}</td>
+<td><input type="checkbox" name="FrontPage" value="{{FrontPage}}" ></td>
                         <td>
-                            <a href="{{pathFor 'parentsUpdate' _id=this._id}}">Edit &nbsp; &nbsp;</a>
+                            <a href="{{pathFor 'usersUpdate' _id=this._id}}">Edit &nbsp; &nbsp;</a>
                             <a class="delete">Delete &nbsp; &nbsp;</a>
-                            <a href="{{pathFor 'parentsView' _id=this._id}}">View</a>
+                            <a href="{{pathFor 'usersView' _id=this._id}}">View</a>
                         </td>
                     </tr>
                     {{/each}}
@@ -58,7 +50,7 @@
             </table>
           {{else}}
             <div class="wrapper-message">
-              <div class="title-message">No item exists yet!</div>
+              <div class="title-message">No users exists yet!</div>
               <div class="subtitle-message">Be the first to create one</div>
             </div>
           {{/if}}

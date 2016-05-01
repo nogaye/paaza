@@ -1,0 +1,30 @@
+<template name="usersForm">
+    
+        <form>
+        <label>{{_id}}</label>
+
+         <label>Title:</label>
+          <input type="text" name="Title"  value="{{Title}}" placeholder="News title">
+
+        <label>Content:</label>
+          
+          <textarea name="Content" value="{{Content}}"  rows="10" placeholder="News content"></textarea>
+          <label>School Id:</label>
+          <input type="text" name="SchoolId"  value="{{SchoolId}}" placeholder="School Id">
+      
+
+<label>Image Url:</label>
+          <input type="text" name="ImageUrl"  value="{{ImageUrl}}" placeholder="Image url">
+      
+
+      {{#if this}}
+      <button type="submit" class="btn-primary">Update</button>
+      {{else}}
+      <button type="submit" class="btn-primary">Save</button>
+      {{/if}}
+          
+        </form>
+
+
+
+</template>

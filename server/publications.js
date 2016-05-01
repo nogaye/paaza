@@ -18,10 +18,15 @@ Meteor.publish('schoolNews', function() {
   return News.schoolNews();
 });
 
-
+Meteor.publish('schoolUsers', function() {
+  return Users.schoolUsers();
+});
 
 
 //===== Only publish for admin =====
+Meteor.publish('users', function() {
+  return Users.find({}, {sort: {CreatedDate: -1}, limit: 100});
+});
 Meteor.publish('news', function() {
   return News.find({}, {sort: {CreatedDate: -1}, limit: 100});
 });
