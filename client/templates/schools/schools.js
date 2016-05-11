@@ -12,6 +12,7 @@ var adminHelpers = {
 console.log(all);
       return all;
   },
+
   ready: function() {
     return Router.current().subscriptionItems.ready();
   }

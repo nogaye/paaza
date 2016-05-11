@@ -2,12 +2,15 @@
 
   <div class="page studentReport {{activeTabClass}}">
     {{#nav title='Student' black=true back=true}}
+     
+<!--
       {{#if bookmarked}}
         <a href="#" class="nav-item js-remove-bookmark bookmarked"><span class="icon-bookmark"></span></a>
       {{else}}
         <a href="#" class="nav-item js-add-bookmark"><span class="icon-bookmark-hollow"></span></a>
       {{/if}}
       <a href="#" class="nav-item js-share"><span class="icon-camera"></span></a>
+      -->
     {{/nav}}
 
     <div class="image-recipe" style="background-image: url('{{studentImage student=this size='full'}}')"></div>
@@ -21,15 +24,16 @@
       </div>
 
       <div class="btns-group">
-        <a class="btn-secondary {{#if isActiveTab 'make'}}active{{/if}} {{#if isActiveTab 'studentReport'}}no-state{{/if}} js-show-recipe">Academic</a>
+        <a class="btn-secondary {{#if isActiveTab 'make'}}active{{/if}} {{#if isActiveTab 'studentReport'}}no-state{{/if}} js-show-recipe">Academics</a>
         <a class="btn-secondary {{#if isActiveTab 'feed'}}active{{/if}} {{#if isActiveTab 'studentReport'}}no-state{{/if}} js-show-feed">Remarks</a>
       </div>
     </div>
 
 
     <div class="content-scrollable static-nav make-scrollable">
-      <a class="btn-tertiary js-share"><span class="icon-camera"></span> Share that you made this</a>
+      <a class="btn-tertiary">Academic Reports</a>
 
+<!--
       <h2 class="list-title">Ingredients</h2>
       <ul class="list-ingredients">
         {{#each ingredients}}
@@ -49,10 +53,13 @@
           </li>
       </ol>
       <a href="{{source.url}}" target="_blank" class="btn-primary js-open">See full recipe on {{source.name}}</a>
+    -->
+
     </div>
 
     <div class="content-scrollable static-nav feed-scrollable">
-      <a class="btn-tertiary js-share"><span class="icon-camera"></span> Share that you made this</a>
+      <a class="btn-tertiary">Teachers Remarks</a>
+      <!--
       <div class="list-activities">
         {{#each activities}}
           {{> activity}}
@@ -63,6 +70,8 @@
           </div>
         {{/each}}
       </div>
+-->
+
     </div>
   </div>
 </template>

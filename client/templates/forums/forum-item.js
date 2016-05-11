@@ -21,7 +21,8 @@ Template.forumItem.helpers({
     return RecipesData[this.recipeName].title;
   },
   path: function() {
-    return Router.path('recipe', { name: this.recipeName },
+    //TODO - create idea
+    return Router.path('idea', { name: this.recipeName },
       { query: { activityId: this._id } })
   }
 })
